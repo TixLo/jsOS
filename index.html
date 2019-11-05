@@ -2,21 +2,39 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>你好，GitHub</title>
+        <title>jsOS</title>
         <script type="text/javascript" src="public/js/asm_compiler/asm_compiler.js"></script>
         <script type="text/javascript" src="public/js/asm_compiler/asm_utils.js"></script>
         <script type="text/javascript" src="public/js/asm_compiler/asm_mov.js"></script>
         <script type="text/javascript" src="public/js/asm_sources/hello.asm.js"></script>
+        <script type="text/javascript" src="public/js/canvas/canvas.js"></script>
         <link rel='stylesheet' href='public/css/style.css' />
     </head>
     <body onload="init()">
-        <img src="public/images/hello.jpeg">
+        <canvas id='device' width="300" height="300"></canvas>
+        
     </body>
     <script>
         function init() {
-            var sources = hello();
-            console.log(sources);
-            asm_compile(sources);
+            // var sources = hello();
+            // console.log(sources);
+            // asm_compile(sources);
+
+            // canvas_draw_block('device', 0, 0, 300, 100, '#FF0000', "hello", 20, 'top');
+            // canvas_draw_block('device', 0, 100, 300, 100, '#FF0000', "hello", 20, 'bottom');
+            // canvas_draw_block('device', 0, 200, 300, 100, '#FF0000', "hello", 20, 'center');
+            // canvas_draw_line('device', 0, 0, 300, 300, '#0000FF');
+
+            var blocks = [
+                { id: 'device', x: 0, y: 0, w: 300, h: 100, c: '#FF0000', text: 'hello', text_size: 20, align: 'top'},
+                { id: 'device', x: 0, y: 100, w: 300, h: 100, c: '#FF0000', text: 'hello', text_size: 20, align: 'top'},
+                { id: 'device', x: 0, y: 200, w: 300, h: 100, c: '#FF0000', text: 'hello', text_size: 20, align: 'top'}
+            ];
+            var device = {
+                blocks: blocks
+            };
+
+            draw_device(device);
         }
     </script>
 </html>

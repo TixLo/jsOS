@@ -1,1 +1,3 @@
-body {background-color: coral;}
+canvas#device{
+    border:1px black solid;
+}
