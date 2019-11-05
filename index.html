@@ -3,16 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>你好，GitHub</title>
-        <script src="public/js/test.js" type="text/javascript"></script>
+        <script type="text/javascript" src="public/js/asm_compiler/asm_compiler.js"></script>
+        <script type="text/javascript" src="public/js/asm_compiler/asm_utils.js"></script>
+        <script type="text/javascript" src="public/js/asm_compiler/asm_mov.js"></script>
+        <script type="text/javascript" src="public/js/asm_sources/hello.asm.js"></script>
         <link rel='stylesheet' href='public/css/style.css' />
     </head>
     <body onload="init()">
-        <h1>覺得厲害</h1>
         <img src="public/images/hello.jpeg">
     </body>
     <script>
         function init() {
-            console.log(func());
+            var sources = hello();
+            console.log(sources);
+            asm_compile(sources);
         }
     </script>
 </html>
