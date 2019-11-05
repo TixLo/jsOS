@@ -1,3 +1,3 @@
-var name = function() {
+var func = function() {
     return "TEST";
 }
