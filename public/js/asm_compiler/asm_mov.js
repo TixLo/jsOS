@@ -10,9 +10,6 @@ var toFixedHex = function(value) {
 }
 
 var asm_mov = function(index, p1, p1_addr, p2, p2_addr, codes, addr, machine_codes, cb) {
-    console.log(p1.type + ',' + p2.type);
-    console.log(p1.value + ',' + p2.value);
-
     var curr_machine_codes = [];
     
     if (p1.type === "register" && p2.type === "number") {
@@ -54,7 +51,6 @@ var asm_mov = function(index, p1, p1_addr, p2, p2_addr, codes, addr, machine_cod
                     };
         curr_machine_codes.push('8b');
         curr_machine_codes.push(regs[p1.value + p2.value]);
-        console.log(regs[p1.value + p2.value]);
         if (p2.value === 'bp')
             curr_machine_codes.push('00');
     }

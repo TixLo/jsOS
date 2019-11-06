@@ -21,7 +21,7 @@ var codes = {}; // {address : 'code line number'}
 // reference from https://github.com/Schweigi/assembler-simulator/blob/master/src/assembler/asm.js
 var parsing = function(line, index) {
     line = line.trim();
-    console.log('[' + index + '] ' + line);
+    // console.log('[' + index + '] ' + line);
     // Use https://www.debuggex.com/
     // Matches: "label: INSTRUCTION (["')OPERAND1(]"'), (["')OPERAND2(]"')
     // GROUPS:      1       2               3                    7
@@ -33,7 +33,7 @@ var parsing = function(line, index) {
 
     try {
         var match = regex.exec(line);
-        console.log(match);
+        // console.log(match);
 
         // Allowed formats: 200, 200d, 0xA4, 0o48, 101b
         var parseNumber = function (input) {
@@ -222,7 +222,5 @@ var asm_compile = function(asm) {
     // dump machine_codes
     dump(machine_codes);
 
-    console.log('addr : ' + addr);
-    console.log(labels);
-    console.log(codes);
+    return machine_codes;
 }
